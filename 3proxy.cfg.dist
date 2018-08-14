@@ -1,5 +1,10 @@
 #!/usr/local/bin/3proxy
-nscache 65535
+
+nserver NS1
+nserver NS2
+
+nscache 65536
+
 timeouts 1 5 30 60 180 1800 15 60
 
 auth AUTH
@@ -7,6 +12,5 @@ auth AUTH
 proxy -p8080 -n
 socks -p3128
 
-nserver NS1
-nserver NS2
-
+log /var/log/3proxy.log
+logformat "- +_L(%d/%m/%Y %H:%M:%S.%. %z) %N.%p %E %U %C:%c %R:%r %O %I %h %T"
