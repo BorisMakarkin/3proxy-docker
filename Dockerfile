@@ -13,7 +13,6 @@ RUN apk add --update alpine-sdk wget bash linux-headers wget bash build-base && 
 # STEP 2 build a small image
 FROM alpine:latest
 
-# STEP 1 build executable binary
 RUN mkdir /etc/3proxy/
 
 COPY --from=builder /3proxy-*/src/3proxy /usr/local/bin/
